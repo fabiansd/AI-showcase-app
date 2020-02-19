@@ -1,33 +1,13 @@
 @import "src/style/style";
 
 
-article {
-  box-shadow: 10px 10px grey;
-  display: grid;
-  grid-template-columns:
-          [full-start] minmax(1em, 1fr)
-          [main-start] minmax(0, 68em) [main-end]
-          minmax(1em, 1fr) [full-end];
-  grid-gap: 1em;
-  padding: 2rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
 
 section {
-  grid-column: main;
-  border-radius: 0.5rem;
-  padding: 2rem;
+  margin: 6rem 10rem 10rem 6rem;
+  background: white;
 }
 
-article > * {
-  background-color: #eaeaea;
-}
 
-.header {
-  @extend .edges;
-  font-size: 2rem;
-}
 
 .footer {
   @extend .edges;
