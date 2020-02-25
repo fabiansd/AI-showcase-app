@@ -1,25 +1,17 @@
 import React from 'react';
 import { Divider, Grid, Header, Icon, Image } from 'semantic-ui-react';
 import '../style/components.scss';
-import { workcardObject } from '../types/types';
 import Workcard from './Workcard';
 
+
 interface bodyState {
-    workcards: workcardObject[];
+    companies: string[];
 }
 
-class Body extends React.Component<null, bodyState> {
+class Body extends React.Component<{}, bodyState>{
 
     public state = {
-        workcards: [
-            {
-                company: 'Statnett',
-                ingress: 'arbeidserfaring.statnett.ingress',
-                who: 'arbeidserfaring.statnett.who',
-                goal: 'arbeidserfaring.statnett.goal',
-                results: 'arbeidserfaring.statnet.results'
-            }
-        ]
+        companies: ["statnet", "tronderenergi"],
     };
 
     render() {
@@ -36,7 +28,6 @@ class Body extends React.Component<null, bodyState> {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
-
             <Divider/>
             <div className="flex-container">
                 <div className="flex-item-1">
@@ -44,7 +35,7 @@ class Body extends React.Component<null, bodyState> {
                         <Icon name="university" />
                         <Header.Content>Uptime Guarantee</Header.Content>
                     </Header>
-                    <Workcard workcard={this.state.workcards[0]}/>
+                    <Workcard company={this.state.companies[0]}/>
                 </div>
                 <div className="flex-item-2">
                     <Header as='h3'>*/}
