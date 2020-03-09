@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider, Grid, Header, Icon, Image } from 'semantic-ui-react';
 import '../style/components.scss';
 import Workcard from './Workcard';
+import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json'
 
 
 interface bodyState {
@@ -35,7 +36,7 @@ class Body extends React.Component<{}, bodyState>{
                         <Icon name="university" />
                         <Header.Content>Uptime Guarantee</Header.Content>
                     </Header>
-                    <Workcard company={this.state.companies[0]}/>
+                    {this.renderWorkcards()}
                 </div>
                 <div className="flex-item-2">
                     <Header as='h3'>*/}
@@ -47,6 +48,26 @@ class Body extends React.Component<{}, bodyState>{
                 </div>
             </div>
         </div>;
+    }
+
+    private renderWorkcards = () => {
+        return(
+            <div className={"pt-1"}>
+                <Workcard
+                    company={arbeidserfaring.statnet.name}
+                    ingress={arbeidserfaring.statnet.ingress}
+                    who={arbeidserfaring.statnet.who}
+                    goal={arbeidserfaring.statnet.goal}
+                    results={arbeidserfaring.statnet.results}/>
+
+                <Workcard
+                    company={arbeidserfaring.tronderenergi.name}
+                    ingress={arbeidserfaring.tronderenergi.ingress}
+                    who={arbeidserfaring.tronderenergi.who}
+                    goal={arbeidserfaring.tronderenergi.goal}
+                    results={arbeidserfaring.tronderenergi.results}/>
+            </div>
+        );
     }
 }
 

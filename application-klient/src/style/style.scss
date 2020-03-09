@@ -30,10 +30,11 @@ p {
 header {
   @extend .edges;
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   background-color: #28282a;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-weight: bold;
 }
 
 .link {

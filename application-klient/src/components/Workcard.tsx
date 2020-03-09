@@ -1,37 +1,64 @@
 import React from 'react';
 import '../style/components.scss'
-import { Card, Icon } from 'semantic-ui-react';
-import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json'
+import { Card, Button } from 'semantic-ui-react';
 
 interface workcardProps {
     company: string;
+    ingress: string;
+    who: string;
+    goal: string;
+    results: string;
 }
 
-class Workcard extends React.Component<workcardProps, {}> {
+interface workcardState {
+    displayExtra: boolean;
+}
+
+class Workcard extends React.Component<workcardProps, workcardState> {
+
+    state = {
+        displayExtra: false,
+    };
 
     render() {
-        return (
-            <div className="workcard">
-                <Card fluid>
-                    <Card.Content header={arbeidserfaring.statnet.name} textAlign="left"/>
-                    <Card.Content description={arbeidserfaring.statnet.ingress} />
-                    <Card.Content>
-                        <p>
-                            {arbeidserfaring.statnet.who}
-                        </p>
-                        <p>
-                            {arbeidserfaring.statnet.goal}
-                        </p>
-                        <p>
-                            {arbeidserfaring.statnet.results}
-                        </p>
-                    </Card.Content>
-                    <Card.Content extra>
-                        <Icon name='user' />See more
-                    </Card.Content>
-                </Card>
-            </div>
-        );
+        return <div className="workcard">
+            <Card fluid>
+                <Card.Content header={this.props.company} textAlign="left" />
+                <Card.Content description={this.props.ingress} textAlign="left"/>
+                {this.renderExtraInfo()}
+                <Card.Content textAlign={'left'}>
+                    <Button onClick={this.handleButtonShow} className={'ui primary button'} size={'medium'} compact={true}>
+                        Read more
+                    </Button>
+                </Card.Content>
+            </Card>
+        </div>;
+    }
+
+    private renderExtraInfo = () => {
+
+        if (this.state.displayExtra) {
+            return (
+                <Card.Content>
+                    <p className={"mini-title"}>Who?</p>
+                    <p>
+                        {this.props.who}
+                    </p>
+                    <p>
+                        {this.props.goal}
+                    </p>
+                    <p>
+                        {this.props.results}
+                    </p>
+                </Card.Content>
+            );
+        } else return
+    };
+
+    private handleButtonShow = () => {
+        this.setState({
+            displayExtra: !this.state.displayExtra
+        })
     }
 }
 
