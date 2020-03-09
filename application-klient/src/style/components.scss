@@ -24,7 +24,12 @@
 
 .mini-title {
   font-weight: bold;
-  padding-bottom: 0;
+  margin-bottom: 0 !important;
+}
+
+#personal-info {
+  margin: 0 0 0.5rem 0;
+  color: rgba(0,0,0,.68);
 }
 
 * {
@@ -39,8 +44,9 @@
 }
 
 .flex-item-1 {
-  min-width: 75%;
+  min-width: 70%;
   flex-grow: 4;
+  padding-right: 6rem;
 }
 
 .flex-item-2 {
@@ -49,7 +55,10 @@
 
 .workcard{
   @extend .shadow-below;
-  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+.educard{
   margin-top: 2rem;
 }
 

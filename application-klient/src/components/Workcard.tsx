@@ -30,6 +30,9 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                     <Button onClick={this.handleButtonShow} className={'ui primary button'} size={'medium'} compact={true}>
                         Read more
                     </Button>
+                    <Button className={'ui button'} size={'medium'} compact={true}>
+                        <a href='fabian.jpg' download>Attest</a>
+                    </Button>
                 </Card.Content>
             </Card>
         </div>;
@@ -44,9 +47,11 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                     <p>
                         {this.props.who}
                     </p>
+                    <p className={"mini-title"}>Goal</p>
                     <p>
                         {this.props.goal}
                     </p>
+                    <p className={"mini-title"}>Results</p>
                     <p>
                         {this.props.results}
                     </p>
