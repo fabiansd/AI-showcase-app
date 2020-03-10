@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Divider, Grid, Header, Icon } from 'semantic-ui-react';
 import '../style/components.scss';
 import Workcard from './Workcard';
-import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json'
 
 
 interface bodyState {
@@ -90,18 +89,10 @@ class Body extends React.Component<{}, bodyState>{
         return(
             <div className={"pt-1"}>
                 <Workcard
-                    company={arbeidserfaring.statnet.name}
-                    ingress={arbeidserfaring.statnet.ingress}
-                    who={arbeidserfaring.statnet.who}
-                    goal={arbeidserfaring.statnet.goal}
-                    results={arbeidserfaring.statnet.results}/>
+                    index={0}/>
 
                 <Workcard
-                    company={arbeidserfaring.tronderenergi.name}
-                    ingress={arbeidserfaring.tronderenergi.ingress}
-                    who={arbeidserfaring.tronderenergi.who}
-                    goal={arbeidserfaring.tronderenergi.goal}
-                    results={arbeidserfaring.tronderenergi.results}/>
+                    index={1}/>
             </div>
         );
     };

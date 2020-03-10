@@ -1,30 +1,30 @@
 import React from 'react';
 import '../style/components.scss'
 import { Card, Button } from 'semantic-ui-react';
+import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json'
 
 interface workcardProps {
-    company: string;
-    ingress: string;
-    who: string;
-    goal: string;
-    results: string;
+    index: number;
 }
 
 interface workcardState {
     displayExtra: boolean;
+    i: string;
 }
 
 class Workcard extends React.Component<workcardProps, workcardState> {
 
     state = {
         displayExtra: false,
+        i: "0",
     };
 
     render() {
         return <div className="workcard">
             <Card fluid>
-                <Card.Content header={this.props.company} textAlign="left" />
-                <Card.Content description={this.props.ingress} textAlign="left"/>
+                {console.log(arbeidserfaring)}
+                <Card.Content header={'arbeidserfaring[this.props.index].name'} textAlign="left" />
+                <Card.Content description={'arbeidserfaring[this.props.index].ingress'} textAlign="left"/>
                 {this.renderExtraInfo()}
                 <Card.Content textAlign={'left'}>
                     <Button onClick={this.handleButtonShow} className={'ui primary button'} size={'medium'} compact={true}>
@@ -38,6 +38,12 @@ class Workcard extends React.Component<workcardProps, workcardState> {
         </div>;
     }
 
+    private loopArb = () => {
+        for (i in arbeidserfaring) {
+            console.log(i)
+        }
+    }
+
     private renderExtraInfo = () => {
 
         if (this.state.displayExtra) {
@@ -45,15 +51,15 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                 <Card.Content>
                     <p className={"mini-title"}>Who?</p>
                     <p>
-                        {this.props.who}
+                        {arbeidserfaring[this.props.index].who}
                     </p>
                     <p className={"mini-title"}>Goal</p>
                     <p>
-                        {this.props.goal}
+                        {arbeidserfaring[this.props.index].goal}
                     </p>
                     <p className={"mini-title"}>Results</p>
                     <p>
-                        {this.props.results}
+                        {arbeidserfaring[this.props.index].results}
                     </p>
                 </Card.Content>
             );
