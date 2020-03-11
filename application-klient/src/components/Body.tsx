@@ -1,19 +1,23 @@
 import React from 'react';
 import { Card, Divider, Grid, Header, Icon } from 'semantic-ui-react';
+import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json';
 import '../style/components.scss';
-import Skills from './Skills';
 import Workcard from './Workcard';
-import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json'
-
 
 interface bodyState {
-    companies: string[];
+    techSkills: string[];
+    devSkills: string[];
+    genSkills: string[];
+    sportsNhobbies: string[];
 }
 
 class Body extends React.Component<{}, bodyState>{
 
     public state = {
-        companies: ["statnet", "tronderenergi"],
+        techSkills: ["Matlab (3yr)", "Python (3yr)", "C++/C (2yr)", "Java (1yr)", "Typescript (1yr)", "Golang (<1yr)"],
+        devSkills: ["Git (3yr)", "Tensorflow (2yr)", "React (1yr)", "AWS (1yr)", "Docker (1yr)", "SQL (<1yr)"],
+        genSkills: ["Certified SCRUM master", "Public speaking and presenting", "Mathematical problem solving"],
+        sportsNhobbies: ["Kitesurfing", "Freediving and scuba diving", "Piano and (amateur)impro", "Reading Sci-fi"]
     };
 
     render() {
@@ -55,16 +59,30 @@ class Body extends React.Component<{}, bodyState>{
                     </Header>
                     {this.renderEducation()}
 
-                    <Header as='h2'>
-                        <Icon name="configure" />
+                    <Header as='h3'>
+                        <Icon name="group" />
                         <Header.Content>Skills</Header.Content>
                     </Header>
-                    <Skills/>
+                    {this.renderList(this.state.genSkills)}
 
-                    <Header as='h2'>
-                        <Icon name="paint brush" />
-                        <Header.Content>Hobbies</Header.Content>
+                    <Header as='h3'>
+                        <Icon name="code" />
+                        <Header.Content>Programming languages</Header.Content>
                     </Header>
+                    {this.renderList(this.state.techSkills)}
+
+                    <Header as='h3'>
+                        <Icon name="configure" />
+                        <Header.Content>Development tools</Header.Content>
+                    </Header>
+                    {this.renderList(this.state.devSkills)}
+
+                    <Header as='h3'>
+                        <Icon name="game" />
+                        <Header.Content>Sports and hobbies</Header.Content>
+                    </Header>
+                    {this.renderList(this.state.sportsNhobbies)}
+
                 </div>
             </div>
         </div>;
@@ -86,6 +104,20 @@ class Body extends React.Component<{}, bodyState>{
                     <a href="http://www.linkedin.com/in/fabiansødaldietrichson">LinkedIn</a>
                 </h3 >
             </div>);
+    };
+
+    private renderList = (skillList: string[]) => {
+        return (
+
+            <ul>
+                <p>
+                    {skillList.map(function(name, index){
+                        return <li key={ index }>{name}</li>;
+                    })}
+                </p>
+            </ul>
+
+        );
     };
 
     private renderWorkcards = () => {
