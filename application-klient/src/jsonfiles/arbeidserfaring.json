@@ -1,4 +1,9 @@
 {
+    "acn" : {
+        "name": "Accenture",
+        "ingress": "2019 Aug to Today - Senior application developer",
+        "who" : "Accenture is a leading global professional services company, providing a broad range of services in strategy and consulting, interactive, technology and operations. The company serves clients in more than 120 contries with over 500,000 employees."
+    },
     "statnet": {
         "name": "Statnet",
         "ingress": "Vi gjorde dette...",

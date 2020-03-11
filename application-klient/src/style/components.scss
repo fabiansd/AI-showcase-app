@@ -2,7 +2,7 @@
 
 
 .bodycard {
-  margin: 6rem 10rem 10rem 6rem;
+  margin: 6rem 10rem 6rem 10rem;
   background: white;
   padding: 2rem;
 }
@@ -51,6 +51,15 @@
 
 .flex-item-2 {
   flex-grow: 1;
+}
+
+.list-item {
+  text-align: start;
+}
+
+#list {
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .workcard{
