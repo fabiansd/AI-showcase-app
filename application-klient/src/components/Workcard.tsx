@@ -9,20 +9,20 @@ interface workcardProps {
 
 interface workcardState {
     displayExtra: boolean;
-    i: string;
+    i: number;
 }
 
 class Workcard extends React.Component<workcardProps, workcardState> {
 
     state = {
         displayExtra: false,
-        i: "0",
+        i: 0,
     };
 
     render() {
         return <div className="workcard">
             <Card fluid>
-                {console.log(arbeidserfaring)}
+                {this.parseJSON("0")}
                 <Card.Content header={'arbeidserfaring[this.props.index].name'} textAlign="left" />
                 <Card.Content description={'arbeidserfaring[this.props.index].ingress'} textAlign="left"/>
                 {this.renderExtraInfo()}
@@ -38,11 +38,14 @@ class Workcard extends React.Component<workcardProps, workcardState> {
         </div>;
     }
 
-    private loopArb = () => {
-        for (i in arbeidserfaring) {
-            console.log(i)
-        }
-    }
+    private parseJSON = (key: string) => {
+
+        console.log(Object.keys(arbeidserfaring))
+        console.log(JSON.parse(arbeidserfaring)[key])
+        // console.log(arbeidserfaring)
+       // console.log(arbeidserfaring["0"])
+       // console.log(arbeidserfaring["0"].name)
+    };
 
     private renderExtraInfo = () => {
 
@@ -51,15 +54,15 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                 <Card.Content>
                     <p className={"mini-title"}>Who?</p>
                     <p>
-                        {arbeidserfaring[this.props.index].who}
+                        {/*{arbeidserfaring[this.props.index].who}*/}
                     </p>
                     <p className={"mini-title"}>Goal</p>
                     <p>
-                        {arbeidserfaring[this.props.index].goal}
+                        {/*{arbeidserfaring[this.props.index].goal}*/}
                     </p>
                     <p className={"mini-title"}>Results</p>
                     <p>
-                        {arbeidserfaring[this.props.index].results}
+                        {/*{arbeidserfaring[this.props.index].results}*/}
                     </p>
                 </Card.Content>
             );
