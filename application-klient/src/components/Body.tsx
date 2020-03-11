@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Divider, Grid, Header, Icon } from 'semantic-ui-react';
 import '../style/components.scss';
+import Skills from './Skills';
 import Workcard from './Workcard';
 import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json'
 
@@ -58,6 +59,7 @@ class Body extends React.Component<{}, bodyState>{
                         <Icon name="configure" />
                         <Header.Content>Skills</Header.Content>
                     </Header>
+                    <Skills/>
 
                     <Header as='h2'>
                         <Icon name="paint brush" />
