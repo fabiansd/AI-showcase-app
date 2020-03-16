@@ -1,0 +1,46 @@
+{
+    "acn-autosys" : {
+        "name": "Accenture: Statens Vegvesen (SVV)",
+        "ingress": "2019 Aug to Today - Full stack application developer",
+        "who" : "Statens Vegvesen is a norwegian state agency responsible for building and maintaining all roads and highways and manage all vehivles and car owners in the country. The project is a migration project named \"Autosys\"",
+        "goal" : "The goal is to develop a new application to handle its 15 million registered vehicles and its 20,000 user that replaces their existing main frame solution. The application serves 1,500 internal caseworkers and external actors like insurance companies and the norwegian police. The project consists of 50 developers working in autonomous SCRUM teams of 6 to 12 with solutiion designs team and management team.",
+        "results" : "I have developed full stack in a SCRUM team of 12 and built domain expertice and continuously delivered functionality. There has been strong focus on high quality code and robust unit and integration tests and communication with the customer. In 2020 March the main frame was shut down and completely taken out of service."
+    },
+    "acn-picterus" : {
+        "name": "Picterus",
+        "ingress": "2019 May to 2019 Aug - Computer vision Against Neonatal Jaundice",
+        "who" : "Picterus is a Norwegian startup company that develops a mobile app for the\ndetection of jaundice in newborns. Jaundice is a condition that arises from the accumulation of\nbilirubin in the blood. It is estimated that jaundice kills around 114,000 newborns each year, and\nthat as many as 60,000 develop permanent brain damage as a result of jaundice. The Picterus\napp has developed estimates of blood bilirubin levels based on mobile camera images.",
+        "goal" : "1. Answer whether it was feasible to estimate bilirubin concentration from images using machine\nlearning\n2. Compare the performance of the model trained using machine learning against Picterus'\nexisting physics models\n3. Estimate how much data might be needed to get the predictions from the machine learning\nmodel on a sufficient level.",
+        "results" : "With a sufficiently good machine learning model, the app can be run locally on the phone. This will\navoid the bottlenecks of sending health data across borders and allowing all images to be\nprocessed on an external server. In addition this does not require a well developed IT infrastructure, which is not always the case in underdeveloped countries.\nBy using convolutional neural networks that can process images and metadata simultaneously,\nthe students achieved a correlation coefficient of 0.9 on a randomly selected test set. In\ncomparison, Picterus's physics model gave a correlation coefficient of 0.6 on the same test set.\nThis indicates that a machine learning approach is feasible for Picterus' purposes.\nAt the same time, we gave specific suggestions on how data collection can\ntake place in the future."
+    },
+    "acn-liquid" : {
+        "name": "Accenture: Liquid Studio",
+        "ingress": "2018 Aug to 2019 May - AI business development",
+        "who" : "Accenture Liquid Studios provide rapid technology development to them embrace new technologies, skillsets and ways of working.",
+        "goal" : "The studios function as the core part of Accenture's innovation architecture, and deliver prototypes and software to help companies enter new markets. The works includes uncovering AI possibilities at existing Accenture projects and establishing AI capabilities in Accenture.",
+        "results" : "During my time in Liquid studio we had several client workshops assessing machine learning oppertuneties in their business. We delivered various prototypes and proof of concepts like a spare part demand prediction prototype to a norwegian car importer."
+    },
+    "tronderenergi": {
+        "name": "TrønderEnergi AS",
+        "ingress": "2019 Jan to 2019 May - Predicting wind power output with machine learning",
+        "who": "TrønderEnergi is a energy production company in Trondheim which produces and sell electric energy. They own several wind mill farms and work towards making energy a sustainable resource.",
+        "goal": "Every day, Tronderenergi places bids on the energy market to sell their power production. If they produce less than their bid, they have to pay penalty fines to fill in the underproduction. However, if they produce more than their bid, they have overproduction they’re unable to sell. Wind power is solely dependant on the weather. Therefore, they wish to be able to predict their power production based on the weather forecast the next 24 hours. The goal of our project was to perform data analysis and develop machine learning models to better predict their electricity production of their wind farms.",
+        "results": "The work included visualization and analysis of data, interviews of domain experts and development of prediction models based on weather and operational data. Our objective of the models was to minimize the monetary loss of non-optimal commandments on the energy market. The progression was presented and discussed with representatives from Tronderenergi regularly, and we functioned as hired consultants. As a result, we were able to deploy a simple prediction model to be monitored for evaluation and compared with their existing prediction modelling. On some of their wind mill farms we were able to show a prediction accuracy improvement of 24% on the mean square error."
+     },
+    "statnet": {
+        "name": "Statnet",
+        "ingress": "2017 Jun to 2017 Aug - Facilities management with machine learning",
+        "who": "Statnett SF is a Norwegian state-owned enterprise responsible for developing, owning and operating the central electricity grid - including cables and wires connected to other countries.",
+        "goal": "Fabian was a developer in an interdiciplinary team of six students. The project task was to improve facilities management in Statnett with a freely defined solution. The work required an assessment of relevant challenges and implementation of a pilot project.",
+        "results": "The solution was a machine learning model that predicted temperature development in electricity transformers by using historical sensor data. The result of the project better utilized the lifespan and reduce operating expenses of power transformers in the power grid. Data engineering was necessary extract the relevant data from Statnett's database. It was estimated that the solution saved Statnett for 500M NOK in a span of 10 years. The solution was presented for all employees and the corporate management.",
+        "attest": "attest_statnet.pdf"
+     },
+    "reno": {
+        "name": "Renovasjonsetaten",
+        "ingress": "2016 Jun to 2016 Sep - Automatic garbage disposal tracking with RFID",
+        "who": "Oslo Renovasjonsetaten is the state agency responsible for all garbage collection in Oslo.",
+        "goal": "Renovasjonsetaten's goal is to automate and digitize Oslo's waste management and implement a digital tracking of all garbage disposal trucks. We worked with implementing a RFID tracking system to track the progress of garbage disposal trucks in real time.",
+        "results": "We were able to mark some garbage collection routes with RFID chips on every waste container, and an RFID reader on some garbage trucks. This setup automatically registered which garbage containers the garbage trucks had visited and emptied.",
+        "attest": "attest_reno.pdf"
+     }
+}

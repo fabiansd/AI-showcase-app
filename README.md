@@ -1,6 +1,10 @@
 # AI-showcase-app
-This is an application that runs a simple React app in the client displaying various AI cases we have implemented.
 
-## Training
+## Client
 
-The purpose of this application is to gain practice building an application with styling
+React app that shows different demos.
+
+
+## Service
+
+TFX and python scripts will run in the background serving the client app with Flask
