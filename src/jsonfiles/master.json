@@ -1,0 +1,8 @@
+{
+
+    "who": "GE Vingmed delivers medical imaging equipment to hospitals and funds various research projects in Norway. St. Olavs is the university hospital in Trondheim, and is a hub for medical research and technological development and holds several patents on ultrasound technology. GE Vingmed and St. Olavs has a research co-operation project named CIUS which hosts several professor, postdoctral and PhD positions.",
+    "goal": "Ultrasound is known for being cheaper and more available compared to other medical imaging methods like MR and CT. However, it requires more training to produce quality medical examinations and is prone to signal disturbances. I was in a research group in CIUS lead by prof. L. Lovstakken for a year at the university hospital.",
+    "results": "My Master Thesis was focused on using computer vision techniques base on deep learning to improve the imaging quality. The result was noise filtering computer vision models able to run on the GE Vingmed's ultrasound machines. The trained models were optimized to be able to run in real time. We interviewed radiologists to discuss the results and usefulness for real clinical use.",
+    "report": ""
+
+}

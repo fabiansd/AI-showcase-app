@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
+import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
 import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json';
 import '../style/components.scss';
+import Educationcard from './Educationcard';
 import Workcard from './Workcard';
 
 interface bodyState {
@@ -9,6 +10,7 @@ interface bodyState {
     devSkills: string[];
     genSkills: string[];
     sportsNhobbies: string[];
+    renderMaster: boolean;
 }
 
 class Body extends React.Component<{}, bodyState>{
@@ -17,7 +19,8 @@ class Body extends React.Component<{}, bodyState>{
         techSkills: ["Matlab (3yr)", "Python (3yr)", "C++/C (2yr)", "Java (1yr)", "Typescript (1yr)", "Golang (<1yr)"],
         devSkills: ["Git (3yr)", "Tensorflow (2yr)", "React (1yr)", "AWS (1yr)", "Docker (1yr)", "SQL (<1yr)"],
         genSkills: ["Certified SCRUM master", "Public speaking and presenting", "Mathematical problem solving"],
-        sportsNhobbies: ["Kitesurfing", "Freediving and scuba diving", "Piano and (amateur)impro", "Reading Sci-fi"]
+        sportsNhobbies: ["Kitesurfing", "Freediving and scuba diving", "Piano and (amateur)impro", "Reading Sci-fi"],
+        renderMaster: false,
     };
 
     render() {
@@ -39,6 +42,12 @@ class Body extends React.Component<{}, bodyState>{
                 <div className="flex-item-1">
 
                     <Header as='h2'>
+                        <Icon name="university" />
+                        <Header.Content>Education</Header.Content>
+                    </Header>
+                    {this.renderEducation()}
+
+                    <Header as='h2'>
                         <Icon name="building" />
                         <Header.Content>Work experience</Header.Content>
                     </Header>
@@ -53,11 +62,6 @@ class Body extends React.Component<{}, bodyState>{
                 </div>
 
                 <div className="flex-item-2">
-                    <Header as='h2'>
-                        <Icon name="university" />
-                        <Header.Content>Education</Header.Content>
-                    </Header>
-                    {this.renderEducation()}
 
                     <Header as='h3'>
                         <Icon name="group" />
@@ -189,40 +193,7 @@ class Body extends React.Component<{}, bodyState>{
 
     private renderEducation = () => {
         return(
-            <div>
-                <div className="educard">
-                    <Card className="workcard" fluid>
-                        <Card.Content header="NTNU: norwegian University of Science and Technology" textAlign="left" />
-                        <Card.Content textAlign="left">
-                            <div>
-                                Cybernetics and robotics
-                            </div>
-                            <div>
-                                Master's degree
-                            </div>
-                            <div>
-                                Aug 2013 to June 2018
-                            </div>
-                        </Card.Content>
-                    </Card>
-                </div>
-                <div className="educard">
-                    <Card className="workcard" fluid>
-                        <Card.Content header="UCSB: University of California Santa Barbara" textAlign="left" />
-                        <Card.Content textAlign="left">
-                            <div>
-                                Machine learning
-                            </div>
-                            <div>
-                                Exchange - Graduate and undergraduate
-                            </div>
-                            <div>
-                                Sep 2016 to June 2017
-                            </div>
-                        </Card.Content>
-                    </Card>
-                </div>
-            </div>
+            <Educationcard/>
         );
     }
 }
