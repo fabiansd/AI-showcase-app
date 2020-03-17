@@ -1,10 +1,7 @@
 
-interface workcardObject {
-    company: string;
-    ingress: string;
-    who: string;
-    goal: string;
-    results: string
+interface Skill {
+    name: string;
+    description?: string;
 }
 
-export {workcardObject}
+export {Skill}

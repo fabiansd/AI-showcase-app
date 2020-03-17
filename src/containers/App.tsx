@@ -10,18 +10,6 @@ class App extends Component {
             <div className="App">
                 <Headline/>
                 <Body/>
-                <footer className="footer">
-                    <p>
-                        <a
-                            className="link"
-                            href="https://www.linkedin.com/home/?originalSubdomain=no"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            LinkedIN
-                        </a>
-                    </p>
-                </footer>
             </div>
         );
     }

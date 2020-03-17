@@ -29,7 +29,7 @@
         "results": "The work included visualization and analysis of data, interviews of domain experts and development of prediction models based on weather and operational data. Our objective of the models was to minimize the monetary loss of non-optimal commandments on the energy market. The progression was presented and discussed with representatives from Tronderenergi regularly, and we functioned as hired consultants. As a result, we were able to deploy a simple prediction model to be monitored for evaluation and compared with their existing prediction modelling. On some of their wind mill farms we were able to show a prediction accuracy improvement of 24% on the mean square error."
      },
     "statnet": {
-        "name": "Statnet",
+        "name": "Statnett",
         "ingress": "2017 Jun to 2017 Aug - Facilities management with machine learning",
         "who": "Statnett SF is a Norwegian state-owned enterprise responsible for developing, owning and operating the central electricity grid - including cables and wires connected to other countries.",
         "goal": "Fabian was a developer in an interdiciplinary team of six students. The project task was to improve facilities management in Statnett with a freely defined solution. The work required an assessment of relevant challenges and implementation of a pilot project.",

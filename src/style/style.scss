@@ -8,6 +8,10 @@ p {
   text-align: left;
 }
 
+.h3 .paddingextra {
+  padding-top: 2rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

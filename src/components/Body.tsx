@@ -2,25 +2,55 @@ import React from 'react';
 import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
 import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json';
 import '../style/components.scss';
+import { Skill } from '../types/types';
 import Educationcard from './Educationcard';
 import Workcard from './Workcard';
 
+export type Fruit = "code" | "Apple" | "Banana"
+
 interface bodyState {
-    techSkills: string[];
-    devSkills: string[];
-    genSkills: string[];
-    sportsNhobbies: string[];
-    renderMaster: boolean;
+    langSkills: Skill[];
+    devSkills: Skill[];
+    genSkills: Skill[];
+    industryExpertise: Skill[];
+    sportsNhobbies: Skill[];
 }
 
 class Body extends React.Component<{}, bodyState>{
 
     public state = {
-        techSkills: ["Matlab (3yr)", "Python (3yr)", "C++/C (2yr)", "Java (1yr)", "Typescript (1yr)", "Golang (<1yr)"],
-        devSkills: ["Git (3yr)", "Tensorflow (2yr)", "React (1yr)", "AWS (1yr)", "Docker (1yr)", "SQL (<1yr)"],
-        genSkills: ["Certified SCRUM master", "Public speaking and presenting", "Mathematical problem solving"],
-        sportsNhobbies: ["Kitesurfing", "Freediving and scuba diving", "Piano and (amateur)impro", "Reading Sci-fi"],
-        renderMaster: false,
+        langSkills: [{name: "Python", description: "3 year"},
+            {name: "Matlab", description: "3 year"},
+            {name: "C++ / C", description: "2 year"},
+            {name: "Java", description: "1 year"},
+            {name: "Javascript / Typescript", description: "1 year"},
+            {name: "Golang", description: "<1 year"}],
+
+        devSkills: [{name: "Git", description: "3 year"},
+            {name: "Tensorflow / Keras", description: "2 year"},
+            {name: "React / Redux", description: "1 year"},
+            {name: "Amazon Web Services", description: "1 year"},
+            {name: "Docker", description: "1 year"},
+            {name: "SQL", description: "<1 year"}],
+
+        genSkills: [{name: "DevOps / Agile development"},
+            {name: "Control theory / Autonomy"},
+            {name: "Public speaking / Presenting"},
+            {name: "Deep Learning / Machine learning"},
+            {name: "Computer vision / CNN"}],
+
+        industryExpertise: [{name: "Electric power production"},
+            {name: "Automotive"},
+            {name: "Medical image processing"},
+            {name: "Bar and restaurant"}],
+
+        sportsNhobbies: [{name: "Kiting on snow and water"},
+            {name: "Freediving and scuba diving"},
+            {name: "Piano and guitar"},
+            {name: "Reading Sci-fi and phsychology"}],
+
+        languages: [{name: "Norwegian", description: "Mother tongue"},
+            {name: "English", description: "Excellent"}],
     };
 
     render() {
@@ -31,7 +61,7 @@ class Body extends React.Component<{}, bodyState>{
                         {this.renderPersonalInfo()}
                     </Grid.Column>
                     <Grid.Column floated="right">
-                        <img src="fab_port2.png" alt="Profile"/>
+                        <img src="../../public/images/fabian.s.dietrichson.jpg" alt="Profile"/>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
@@ -58,39 +88,71 @@ class Body extends React.Component<{}, bodyState>{
                         <Header.Content>Voluntary work</Header.Content>
                     </Header>
 
-
                 </div>
 
                 <div className="flex-item-2">
 
                     <Header as='h3'>
-                        <Icon name="group" />
-                        <Header.Content>Skills</Header.Content>
+                        <Icon name="certificate"/>
+                        <Header.Content>Certificates</Header.Content>
                     </Header>
-                    {this.renderUIList(this.state.genSkills)}
+                    {this.renderCertificate()}
+
+                    <div className="py-3"/>
 
                     <Header as='h3'>
                         <Icon name="code" />
-                        <Header.Content>Programming languages</Header.Content>
+                        <Header.Content>Programming</Header.Content>
                     </Header>
-                    {this.renderList(this.state.techSkills)}
+                    {this.renderSkillList(this.state.langSkills)}
+                    <div className="py-3"/>
+
+                    <Header as='h3' >
+                        <Icon name="group" />
+                        <Header.Content>Tools</Header.Content>
+                    </Header>
+                    {this.renderSkillList(this.state.devSkills)}
 
                     <Header as='h3'>
                         <Icon name="configure" />
-                        <Header.Content>Development tools</Header.Content>
+                        <Header.Content>Skills</Header.Content>
                     </Header>
-                    {this.renderList(this.state.devSkills)}
+                    {this.renderSkillList(this.state.genSkills)}
+
+                    <Header as='h3'>
+                        <Icon name="industry" />
+                        <Header.Content>Industry expertise</Header.Content>
+                    </Header>
+                    {this.renderSkillList(this.state.industryExpertise)}
 
                     <Header as='h3'>
                         <Icon name="game" />
-                        <Header.Content>Sports and hobbies</Header.Content>
+                        <Header.Content>Hobbies</Header.Content>
                     </Header>
-                    {this.renderList(this.state.sportsNhobbies)}
+                    {this.renderSkillList(this.state.sportsNhobbies)}
 
+                    <Header as='h3'>
+                        <Icon name="comments" />
+                        <Header.Content>Languages</Header.Content>
+                    </Header>
+                    {this.renderSkillList(this.state.languages)}
                 </div>
             </div>
         </div>;
     }
+
+    private renderCertificate = () => {
+        return(
+            <List divided relaxed className="list">
+                <List.Item className="list-item-align">
+                    <List.Content>
+                        <List.Header >Professional Scrum Master 1 (PSM 1)</List.Header>
+                        <List.Description><a href="https://www.scrum.org/certificates/450934">Certificate diploma</a></List.Description>
+                    </List.Content>
+                </List.Item>
+            </List>
+        );
+    };
 
     private renderPersonalInfo = () => {
         return (
@@ -110,35 +172,21 @@ class Body extends React.Component<{}, bodyState>{
             </div>);
     };
 
-    private renderUIList = (skillList: string[]) => {
-        return (
+    private renderSkillList = (skillList: Skill[]) => {
 
+        return (
             <List divided relaxed className="list">
-                {skillList.map(function(name, index){
+                {skillList.map(function(item, index){
                     return (
-                        <List.Item className="list-item">
+                        <List.Item className="list-item-align">
                             <List.Content>
-                                <List.Header>{name}</List.Header>
-                                <List.Description>{name}</List.Description>
+                                <List.Header >{item.name}</List.Header>
+                                {(!!item.description) && <List.Description>{item.description}</List.Description>}
                             </List.Content>
                         </List.Item>
                     );
                 })}
             </List>
-        );
-    };
-
-    private renderList = (skillList: string[]) => {
-        return (
-
-            <ul>
-                <p>
-                    {skillList.map(function(name, index){
-                        return <li key={ index }>{name}</li>;
-                    })}
-                </p>
-            </ul>
-
         );
     };
 

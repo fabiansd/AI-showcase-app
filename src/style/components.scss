@@ -50,16 +50,22 @@
 }
 
 .flex-item-2 {
-  flex: 0 0 12rem;
+  flex: 0 0 13rem;
+  text-align: start;
+  padding-right: 1rem;
 }
 
-.list-item {
+.list-item-align {
   text-align: start;
 }
 
 #list {
   padding-right: 1rem;
   padding-left: 1rem;
+}
+
+#padding-top {
+  padding-top: 2rem;
 }
 
 #description-text {

@@ -5,7 +5,7 @@ class Headline extends React.Component {
     render() {
         return (
             <header className="header">
-                    Uptime Guarantee
+                    Curriculum Vitae
             </header>
         );
     }
