@@ -21,7 +21,7 @@ class Workcard extends React.Component<workcardProps, workcardState> {
     };
 
     render() {
-        return <div className="workcard">
+        return <div className="card" id="card-padding">
             <Card fluid>
                 <Card.Content header={this.props.company} textAlign="left" />
                 <Card.Content description={this.props.ingress} textAlign="left"/>
@@ -31,7 +31,7 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                         Read more
                     </Button>
                     <Button className={'ui button'} size={'medium'} compact={true}>
-                        <a href='fabian.jpg' download>Attest</a>
+                        <a href='../../public/docs/Attest_renovasjonsetaten_oslo_kommune.pdf' download>Attest</a>
                     </Button>
                 </Card.Content>
             </Card>

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/components.scss'
 import { Card, Button } from 'semantic-ui-react';
-import * as master from '../jsonfiles/master.json';
+import * as master from '../public/jsonfiles/master.json';
 
 interface educationcardState {
     displayMaster: boolean;
@@ -15,9 +15,9 @@ class Educationcard extends React.Component<{}, educationcardState> {
 
     render() {
         return(
-            <div className={"pt-1"}>
-                <div className="educard">
-                    <Card className="workcard" fluid>
+            <div>
+                <div className="card card-padding">
+                    <Card className="card" fluid>
                         <Card.Content header="NTNU: norwegian University of Science and Technology" textAlign="left" />
                         <Card.Content description={this.renderNTNUDescription()} textAlign="left">
                         </Card.Content>
@@ -29,8 +29,8 @@ class Educationcard extends React.Component<{}, educationcardState> {
                         </Card.Content>
                     </Card>
                 </div>
-                <div className="educard">
-                    <Card className="workcard" fluid>
+                <div className="card">
+                    <Card className="card" fluid>
                         <Card.Content header="UCSB: University of California Santa Barbara" textAlign="left" />
                         <Card.Content description={this.renderUCSBDescription()} textAlign="left"/>
                     </Card>
