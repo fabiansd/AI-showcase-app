@@ -27,11 +27,6 @@
   margin-bottom: 0 !important;
 }
 
-#personal-info {
-  margin: 0 0 0.5rem 0;
-  color: rgba(0,0,0,.68);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -59,22 +54,24 @@
   text-align: start;
 }
 
+#personal-info {
+  margin: 0 0 0.5rem 0;
+  color: rgba(0,0,0,.68);
+}
+
 #list {
   padding-right: 1rem;
   padding-left: 1rem;
-}
-
-#padding-top {
-  padding-top: 2rem;
 }
 
 #description-text {
   color: rgba(0,0,0,.68);
 }
 
-.workcard{
+.card{
   @extend .shadow-below;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .educard{
@@ -84,12 +81,6 @@
 .footer {
   @extend .edges;
   font-size: 1rem;
-}
-
-.card {
-  @extend .box-shadow;
-  background-color: aqua;
-  border-radius: 0.3rem;
 }
 
 .underborder {

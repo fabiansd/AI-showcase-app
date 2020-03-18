@@ -1,10 +1,12 @@
 import React from 'react';
 import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
-import * as arbeidserfaring from '../jsonfiles/arbeidserfaring.json';
+import * as arbeidserfaring from '../files/jsonfiles/arbeidserfaring.json';
 import '../style/components.scss';
 import { Skill } from '../types/types';
 import Educationcard from './Educationcard';
 import Workcard from './Workcard';
+import fabian_image from '../files/images/fabian.s.dietrichson.jpg';
+
 
 export type Fruit = "code" | "Apple" | "Banana"
 
@@ -57,11 +59,11 @@ class Body extends React.Component<{}, bodyState>{
         return <div className="bodycard shadoweffect">
             <Grid divided='vertically'>
                 <Grid.Row columns={2}>
-                    <Grid.Column textAlign="left">
-                        {this.renderPersonalInfo()}
+                    <Grid.Column width={3}>
+                        <img src={fabian_image} alt="Profile"/>
                     </Grid.Column>
-                    <Grid.Column floated="right">
-                        <img src="../../public/images/fabian.s.dietrichson.jpg" alt="Profile"/>
+                    <Grid.Column verticalAlign={'bottom'} textAlign={'left'}>
+                        {this.renderPersonalInfo()}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
@@ -79,7 +81,7 @@ class Body extends React.Component<{}, bodyState>{
 
                     <Header as='h2'>
                         <Icon name="building" />
-                        <Header.Content>Work experience</Header.Content>
+                        <Header.Content>Professional experience</Header.Content>
                     </Header>
                     {this.renderWorkcards()}
 
@@ -93,7 +95,7 @@ class Body extends React.Component<{}, bodyState>{
                 <div className="flex-item-2">
 
                     <Header as='h3'>
-                        <Icon name="certificate"/>
+                        <Icon name="trophy"/>
                         <Header.Content>Certificates</Header.Content>
                     </Header>
                     {this.renderCertificate()}
