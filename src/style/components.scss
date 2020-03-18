@@ -27,11 +27,6 @@
   margin-bottom: 0 !important;
 }
 
-#personal-info {
-  margin: 0 0 0.5rem 0;
-  color: rgba(0,0,0,.68);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -57,6 +52,11 @@
 
 .list-item-align {
   text-align: start;
+}
+
+#personal-info {
+  margin: 0 0 0.5rem 0;
+  color: rgba(0,0,0,.68);
 }
 
 #list {

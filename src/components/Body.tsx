@@ -1,11 +1,11 @@
 import React from 'react';
 import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
-import * as arbeidserfaring from '../public/jsonfiles/arbeidserfaring.json';
+import * as arbeidserfaring from '../files/jsonfiles/arbeidserfaring.json';
 import '../style/components.scss';
 import { Skill } from '../types/types';
 import Educationcard from './Educationcard';
 import Workcard from './Workcard';
-require('../public/images/fabian.s.dietrichson.jpg');
+import fabian_image from '../files/images/fabian.s.dietrichson.jpg';
 
 
 export type Fruit = "code" | "Apple" | "Banana"
@@ -59,11 +59,11 @@ class Body extends React.Component<{}, bodyState>{
         return <div className="bodycard shadoweffect">
             <Grid divided='vertically'>
                 <Grid.Row columns={2}>
-                    <Grid.Column textAlign="left">
-                        {this.renderPersonalInfo()}
+                    <Grid.Column width={3}>
+                        <img src={fabian_image} alt="Profile"/>
                     </Grid.Column>
-                    <Grid.Column floated="right">
-                        <img src="../public/images/fabian.s.dietrichson.jpg" alt="Profile"/>
+                    <Grid.Column verticalAlign={'bottom'} textAlign={'left'}>
+                        {this.renderPersonalInfo()}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

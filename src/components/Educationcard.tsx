@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/components.scss'
 import { Card, Button } from 'semantic-ui-react';
-import * as master from '../public/jsonfiles/master.json';
+import * as master from '../files/jsonfiles/master.json';
 
 interface educationcardState {
     displayMaster: boolean;
