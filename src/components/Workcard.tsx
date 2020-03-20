@@ -3,6 +3,7 @@ import '../style/components.scss'
 import { Card, Button } from 'semantic-ui-react';
 
 interface workcardProps {
+    displayExtraProp: boolean;
     company: string;
     ingress: string;
     who: string;
@@ -31,7 +32,7 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                         Read more
                     </Button>
                     <Button className={'ui button'} size={'medium'} compact={true}>
-                        <a href='../../public/docs/Attest_renovasjonsetaten_oslo_kommune.pdf' download>Attest</a>
+                        <a href={require('../files/docs/Attest_renovasjonsetaten_oslo_kommune.pdf')} download>Attest</a>
                     </Button>
                 </Card.Content>
             </Card>
@@ -40,7 +41,7 @@ class Workcard extends React.Component<workcardProps, workcardState> {
 
     private renderExtraInfo = () => {
 
-        if (this.state.displayExtra) {
+        if (this.state.displayExtra || this.props.displayExtraProp) {
             return (
                 <Card.Content>
                     <p className={"mini-title"}>Who?</p>

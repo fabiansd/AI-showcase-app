@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
+import { Divider, Grid, Header, Icon, List, Button } from 'semantic-ui-react';
 import * as arbeidserfaring from '../files/jsonfiles/arbeidserfaring.json';
 import '../style/components.scss';
 import { Skill } from '../types/types';
@@ -11,6 +11,7 @@ import fabian_image from '../files/images/fabian.s.dietrichson.jpg';
 export type Fruit = "code" | "Apple" | "Banana"
 
 interface bodyState {
+    displayAllWorkcards: boolean;
     langSkills: Skill[];
     devSkills: Skill[];
     genSkills: Skill[];
@@ -21,6 +22,7 @@ interface bodyState {
 class Body extends React.Component<{}, bodyState>{
 
     public state = {
+        displayAllWorkcards: false,
         langSkills: [{name: "Python", description: "3 year"},
             {name: "Matlab", description: "3 year"},
             {name: "C++ / C", description: "2 year"},
@@ -60,7 +62,7 @@ class Body extends React.Component<{}, bodyState>{
             <Grid divided='vertically'>
                 <Grid.Row columns={2}>
                     <Grid.Column width={3}>
-                        <img src={fabian_image} alt="Profile"/>
+                        <img src={fabian_image} alt="Profile" />
                     </Grid.Column>
                     <Grid.Column verticalAlign={'bottom'} textAlign={'left'}>
                         {this.renderPersonalInfo()}
@@ -68,7 +70,7 @@ class Body extends React.Component<{}, bodyState>{
                 </Grid.Row>
             </Grid>
 
-            <Divider/>
+            <Divider />
 
             <div className="flex-container">
                 <div className="flex-item-1">
@@ -81,7 +83,9 @@ class Body extends React.Component<{}, bodyState>{
 
                     <Header as='h2'>
                         <Icon name="building" />
-                        <Header.Content>Professional experience</Header.Content>
+                        <Header.Content>
+                            {this.renderExpHeader()}
+                        </Header.Content>
                     </Header>
                     {this.renderWorkcards()}
 
@@ -95,21 +99,21 @@ class Body extends React.Component<{}, bodyState>{
                 <div className="flex-item-2">
 
                     <Header as='h3'>
-                        <Icon name="trophy"/>
+                        <Icon name="trophy" />
                         <Header.Content>Certificates</Header.Content>
                     </Header>
                     {this.renderCertificate()}
 
-                    <div className="py-3"/>
+                    <div className="py-3" />
 
                     <Header as='h3'>
                         <Icon name="code" />
                         <Header.Content>Programming</Header.Content>
                     </Header>
                     {this.renderSkillList(this.state.langSkills)}
-                    <div className="py-3"/>
+                    <div className="py-3" />
 
-                    <Header as='h3' >
+                    <Header as='h3'>
                         <Icon name="group" />
                         <Header.Content>Tools</Header.Content>
                     </Header>
@@ -142,6 +146,21 @@ class Body extends React.Component<{}, bodyState>{
             </div>
         </div>;
     }
+
+    private renderExpHeader = () => {
+        return (
+            <div>
+                Professional experience
+                <Button onClick={this.handleButtonShowAllExp} className={'ui button'} size={'medium'} compact={true}/>
+            </div>
+        );
+    };
+
+    private handleButtonShowAllExp = () => {
+        this.setState({
+            displayAllWorkcards: !this.state.displayAllWorkcards
+        })
+    };
 
     private renderCertificate = () => {
         return(
@@ -196,6 +215,7 @@ class Body extends React.Component<{}, bodyState>{
         return(
             <div className={"pt-1"}>
                 <Workcard
+                    displayExtraProp={this.state.displayAllWorkcards}
                     company={arbeidserfaring['acn-autosys'].name}
                     ingress={arbeidserfaring['acn-autosys'].ingress}
                     who={arbeidserfaring['acn-autosys'].who}
@@ -203,6 +223,7 @@ class Body extends React.Component<{}, bodyState>{
                     results={arbeidserfaring['acn-autosys'].results}/>
 
                 <Workcard
+                    displayExtraProp={this.state.displayAllWorkcards}
                     company={arbeidserfaring['acn-picterus'].name}
                     ingress={arbeidserfaring['acn-picterus'].ingress}
                     who={arbeidserfaring['acn-picterus'].who}
@@ -210,6 +231,7 @@ class Body extends React.Component<{}, bodyState>{
                     results={arbeidserfaring['acn-picterus'].results}/>
 
                 <Workcard
+                    displayExtraProp={this.state.displayAllWorkcards}
                     company={arbeidserfaring['acn-liquid'].name}
                     ingress={arbeidserfaring['acn-liquid'].ingress}
                     who={arbeidserfaring['acn-liquid'].who}
@@ -217,6 +239,7 @@ class Body extends React.Component<{}, bodyState>{
                     results={arbeidserfaring['acn-liquid'].results}/>
 
                 <Workcard
+                    displayExtraProp={this.state.displayAllWorkcards}
                     company={arbeidserfaring.tronderenergi.name}
                     ingress={arbeidserfaring.tronderenergi.ingress}
                     who={arbeidserfaring.tronderenergi.who}
@@ -224,6 +247,7 @@ class Body extends React.Component<{}, bodyState>{
                     results={arbeidserfaring.tronderenergi.results}/>
 
                 <Workcard
+                    displayExtraProp={this.state.displayAllWorkcards}
                     company={arbeidserfaring.statnet.name}
                     ingress={arbeidserfaring.statnet.ingress}
                     who={arbeidserfaring.statnet.who}
@@ -231,6 +255,7 @@ class Body extends React.Component<{}, bodyState>{
                     results={arbeidserfaring.statnet.results}/>
 
                 <Workcard
+                    displayExtraProp={this.state.displayAllWorkcards}
                     company={arbeidserfaring.reno.name}
                     ingress={arbeidserfaring.reno.ingress}
                     who={arbeidserfaring.reno.who}
