@@ -2,9 +2,9 @@
     "youth-council" : {
         "name": "Youth council: city district",
         "ingress": "2007 Aug to 2012 Jun - Member and leader",
-        "who" : "The youth councils consist of political representatives from all city district in Oslo.\nThe councils allocate money to social events and activity offerings for teenagers.",
-        "goal" : "The main goal of the council was to build a lucrative and inclusive cultural offering to young boys and girls in the district to attract them from doing drugs and encourage socialization.",
-        "results" : "We sponsored many different cultural events like musical concerts, talent competitions, skate ramps, camera gear and so forth.",
+        "who" : "Each city district of Oslo have youth councils with representatives for the district's youths. The councils allocate money to social events and activity offerings for the youth.",
+        "goal" : "The main goal of the council was to build a lucrative and inclusive cultural offering to young boys and girls in the district to attract them to encourage healthy socializing and reduce drug use and crime.",
+        "results" : "We sponsored many different cultural events and material like musical concerts, talent competitions, skate ramps, camera gear and so forth.",
         "attest": "attest_ung.pdf",
         "article": "https://www.nettavisen.no/dittoslo/-dette-er-nyttig/3422853518.html"
     },
@@ -12,23 +12,23 @@
         "name": "IAESTE: The International Association for The Exchange Of Students for Technical Experience",
         "ingress": "2013 Aug to 2015 Nov - Jobfair service management ",
         "who" : "IAESTE is an international organization which exchanges students for technical work experience abroad.",
-        "goal" : "IAESTE organize exchange jobs for Norwegian students and maintain an exchange program for foreign students in Norway.",
-        "results" : "I participated in arranging jobfair events for the students where they could connect with companies offering internships. The responsibility involved a lot of contacts with company representatives.",
+        "goal" : "IAESTE organize exchange jobs for Norwegian students and maintain an exchange program for foreign students coming to Norway.",
+        "results" : "I participated in arranging jobfair events for the students to facilitate a connecting arena between companies and students.",
         "attest": "attest_iaeste.pdf"
     },
     "lyche" : {
         "name": "Lyche bar & restaurant",
         "ingress": "2015 Feb to 2015 Nov - Restaurant manager",
-        "who" : "Statens",
+        "who" : "Lyche is a bar and restaurant located in the student town Trondheim",
         "goal" : "I worked as the restaurant manager for 6 months in which I was responsible for recruiting and training waiters and bartenders, managing the headwaiters and bookings, HMS, logistics and supplies and oversee the general restaurant operation.",
-        "results" : "We were able to increase revenue by changing the bartender and waiter structure to reduce waiting time and increase the possibility of upselling.",
+        "results" : "We were able to increase revenue by restructuring the service system in order to reduce customer waiting time and facilitate for upselling.",
         "attest": "attest_lyche.pdf"
     },
     "omega" : {
         "name": "OMEGA line union",
         "ingress": "2013 Aug to 2016 Jun - Floorball team founder and trainer",
         "who" : "The OMEGA brotherhood was founded 1919 for electrical engineering students to offer companionship and a social environment",
-        "goal" : "The line union consist of 17 committees with distinct areas of responsibilities and interests.",
-        "results" : "I founded a floorball team in my union's sport committee and was responsible for budgeting, administer our serial matches, and organizing trainings."
+        "goal" : "The line union consists of 17 committees with distinct areas of responsibilities and interests.",
+        "results" : "I founded a floorball team in OMEGA's sports committee and was responsible for the budget, administer our serial matches and organize trainings."
     }
 }

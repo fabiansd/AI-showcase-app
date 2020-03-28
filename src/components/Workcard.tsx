@@ -9,6 +9,7 @@ interface workcardProps {
     who: string;
     goal: string;
     results: string;
+    // attest?: string;
 }
 
 interface workcardState {
@@ -22,6 +23,9 @@ class Workcard extends React.Component<workcardProps, workcardState> {
     };
 
     render() {
+        // if (!!this.props.attest){
+        //     require('../files/docs/'.concat(this.props.attest));
+        // }
         return <div className="card" id="card-padding">
             <Card fluid>
                 <Card.Content header={this.props.company} textAlign="left" />
@@ -31,13 +35,33 @@ class Workcard extends React.Component<workcardProps, workcardState> {
                     <Button onClick={this.handleButtonShow} className={'ui primary button'} size={'medium'} compact={true}>
                         Read more
                     </Button>
-                    <Button className={'ui button'} size={'medium'} compact={true}>
-                        <a href={require('../files/docs/Attest_renovasjonsetaten_oslo_kommune.pdf')} download>Attest</a>
-                    </Button>
+                    {/*{this.renderAttestButton()}*/}
+                    {/*{!!this.props.company &&*/}
+                    {/*<Button className={'ui button'} size={'medium'} compact={true}>*/}
+                    {/*    <a href={require('../files/docs/'.concat(this.props.attest as string))} download>Attest</a>*/}
+                        {/*<a href={require(attest_path)} download>Attest</a>*/}
+                    {/*</Button>*/}
                 </Card.Content>
             </Card>
         </div>;
     }
+
+    // private renderAttestButton = () => {
+    //     if (!!this.props.attest){
+    //         var attest_path = "../files/docs/".concat(this.props.attest);
+    //         console.log(this.props.company)
+    //         console.log(attest_path)
+    //         return (
+    //             <Button className={'ui button'} size={'medium'} compact={true}>
+    //                 <a href={attest_path} download>Attest</a>
+    //             </Button>
+    //         );
+    //     }
+    //     else {
+    //         console.log(this.props.company)
+    //         console.log('Not exist')
+    //     }
+    // };
 
     private renderExtraInfo = () => {
 

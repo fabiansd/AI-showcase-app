@@ -1,17 +1,18 @@
 import React from 'react';
-import { Divider, Grid, Header, Icon, List, Button } from 'semantic-ui-react';
+import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
+import fabian_image from '../files/images/fabian.s.dietrichson.jpg';
 import * as arbeidserfaring from '../files/jsonfiles/arbeidserfaring.json';
+import * as frivillig from '../files/jsonfiles/frivilligerfaring.json';
 import '../style/components.scss';
 import { Skill } from '../types/types';
 import Educationcard from './Educationcard';
 import Workcard from './Workcard';
-import fabian_image from '../files/images/fabian.s.dietrichson.jpg';
-
 
 export type Fruit = "code" | "Apple" | "Banana"
 
 interface bodyState {
     displayAllWorkcards: boolean;
+    displayAllVoluntarycards: boolean;
     langSkills: Skill[];
     devSkills: Skill[];
     genSkills: Skill[];
@@ -23,6 +24,7 @@ class Body extends React.Component<{}, bodyState>{
 
     public state = {
         displayAllWorkcards: false,
+        displayAllVoluntarycards: false,
         langSkills: [{name: "Python", description: "3 year"},
             {name: "Matlab", description: "3 year"},
             {name: "C++ / C", description: "2 year"},
@@ -93,6 +95,7 @@ class Body extends React.Component<{}, bodyState>{
                         <Icon name="handshake outline" />
                         <Header.Content>Voluntary work</Header.Content>
                     </Header>
+                    {this.renderVoluntaryCards()}
 
                 </div>
 
@@ -151,7 +154,7 @@ class Body extends React.Component<{}, bodyState>{
         return (
             <div>
                 Professional experience
-                <Button onClick={this.handleButtonShowAllExp} className={'ui button'} size={'medium'} compact={true}/>
+                {/*<Button onClick={this.handleButtonShowAllExp} className={'ui button'} size={'medium'} compact={true}/>*/}
             </div>
         );
     };
@@ -252,7 +255,9 @@ class Body extends React.Component<{}, bodyState>{
                     ingress={arbeidserfaring.statnet.ingress}
                     who={arbeidserfaring.statnet.who}
                     goal={arbeidserfaring.statnet.goal}
-                    results={arbeidserfaring.statnet.results}/>
+                    results={arbeidserfaring.statnet.results}
+                    // attest={arbeidserfaring.statnet.attest.toString()}
+                    />
 
                 <Workcard
                     displayExtraProp={this.state.displayAllWorkcards}
@@ -261,6 +266,45 @@ class Body extends React.Component<{}, bodyState>{
                     who={arbeidserfaring.reno.who}
                     goal={arbeidserfaring.reno.goal}
                     results={arbeidserfaring.reno.results}/>
+            </div>
+        );
+    };
+
+
+    private renderVoluntaryCards = () => {
+        return(
+            <div className={"pt-1"}>
+                <Workcard
+                    displayExtraProp={this.state.displayAllVoluntarycards}
+                    company={frivillig['youth-council'].name}
+                    ingress={frivillig['youth-council'].ingress}
+                    who={frivillig['youth-council'].who}
+                    goal={frivillig['youth-council'].goal}
+                    results={frivillig['youth-council'].results}/>
+
+                <Workcard
+                    displayExtraProp={this.state.displayAllVoluntarycards}
+                    company={frivillig.IAESTE.name}
+                    ingress={frivillig.IAESTE.ingress}
+                    who={frivillig.IAESTE.who}
+                    goal={frivillig.IAESTE.goal}
+                    results={frivillig.IAESTE.results}/>
+
+                <Workcard
+                    displayExtraProp={this.state.displayAllVoluntarycards}
+                    company={frivillig.lyche.name}
+                    ingress={frivillig.lyche.ingress}
+                    who={frivillig.lyche.who}
+                    goal={frivillig.lyche.goal}
+                    results={frivillig.lyche.results}/>
+
+                <Workcard
+                    displayExtraProp={this.state.displayAllVoluntarycards}
+                    company={frivillig.omega.name}
+                    ingress={frivillig.omega.ingress}
+                    who={frivillig.omega.who}
+                    goal={frivillig.omega.goal}
+                    results={frivillig.omega.results}/>
             </div>
         );
     };
