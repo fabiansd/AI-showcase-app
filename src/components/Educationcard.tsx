@@ -18,7 +18,7 @@ class Educationcard extends React.Component<{}, educationcardState> {
             <div>
                 <div className="card card-padding">
                     <Card className="card" fluid>
-                        <Card.Content header="NTNU: norwegian University of Science and Technology" textAlign="left" />
+                        <Card.Content header="NTNU: Norwegian University of Science and Technology" textAlign="left" />
                         <Card.Content description={this.renderNTNUDescription()} textAlign="left">
                         </Card.Content>
                         {this.renderMasterInfo()}

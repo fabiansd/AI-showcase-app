@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Icon, List } from 'semantic-ui-react';
 import fabian_image from '../files/images/fabian.s.dietrichson.jpg';
 import * as arbeidserfaring from '../files/jsonfiles/arbeidserfaring.json';
 import * as frivillig from '../files/jsonfiles/frivilligerfaring.json';
@@ -8,7 +8,6 @@ import { Skill } from '../types/types';
 import Educationcard from './Educationcard';
 import Workcard from './Workcard';
 
-export type Fruit = "code" | "Apple" | "Banana"
 
 interface bodyState {
     displayAllWorkcards: boolean;
@@ -54,7 +53,6 @@ class Body extends React.Component<{}, bodyState>{
             {name: "Freediving and scuba diving"},
             {name: "Piano and guitar"},
             {name: "Reading Sci-fi and phsychology"}],
-
         languages: [{name: "Norwegian", description: "Mother tongue"},
             {name: "English", description: "Excellent"}],
     };
@@ -66,7 +64,7 @@ class Body extends React.Component<{}, bodyState>{
                     <Grid.Column width={3}>
                         <img src={fabian_image} alt="Profile" />
                     </Grid.Column>
-                    <Grid.Column verticalAlign={'bottom'} textAlign={'left'}>
+                    <Grid.Column verticalAlign={'top'} textAlign={'left'}>
                         {this.renderPersonalInfo()}
                     </Grid.Column>
                 </Grid.Row>
@@ -86,8 +84,11 @@ class Body extends React.Component<{}, bodyState>{
                     <Header as='h2'>
                         <Icon name="building" />
                         <Header.Content>
-                            {this.renderExpHeader()}
+                            Professional experience
                         </Header.Content>
+                        {/*<Button onClick={this.handleButtonShowAllExp} className={'ui primary button'} size={'medium'} compact={true}>*/}
+                        {/*    Read more*/}
+                        {/*</Button>*/}
                     </Header>
                     {this.renderWorkcards()}
 
@@ -152,10 +153,22 @@ class Body extends React.Component<{}, bodyState>{
 
     private renderExpHeader = () => {
         return (
-            <div>
-                Professional experience
-                {/*<Button onClick={this.handleButtonShowAllExp} className={'ui button'} size={'medium'} compact={true}/>*/}
+            <div className="Row">
+                <div className="Column">
+                    Professional experience
+                </div>
+                <div className="Column">
+                    <Button onClick={this.handleButtonShowAllExp} className={'ui button'} size={'medium'} compact={true}/>
+                </div>
             </div>
+            // <Grid.Row columns={2}>
+            //     <Grid.Column width={4}>
+            //         Shabala haballa
+            //     </Grid.Column>
+            //     <Grid.Column textAlign={'right'}>
+            //         <Button onClick={this.handleButtonShowAllExp} className={'ui button'} size={'medium'} compact={true}/>
+            //     </Grid.Column>
+            // </Grid.Row>
         );
     };
 
@@ -257,7 +270,7 @@ class Body extends React.Component<{}, bodyState>{
                     goal={arbeidserfaring.statnet.goal}
                     results={arbeidserfaring.statnet.results}
                     // attest={arbeidserfaring.statnet.attest.toString()}
-                    />
+                />
 
                 <Workcard
                     displayExtraProp={this.state.displayAllWorkcards}
